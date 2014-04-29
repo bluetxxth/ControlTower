@@ -1,0 +1,23 @@
+﻿<Window x:Class="ControlTowerV1.ControlTowerWindow"
+          xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Control Tower" Height="457" Width="571" ResizeMode="NoResize" ShowInTaskbar="True" WindowStyle="ThreeDBorderWindow">
+    <Grid Height="392" Width="523">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="202*" />
+            <ColumnDefinition Width="183*" />
+        </Grid.ColumnDefinitions>
+        <ListView Height="368" HorizontalAlignment="Left" Margin="12,12,0,0" Name="lvFlights" VerticalAlignment="Top" Width="497" Grid.ColumnSpan="2">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Flight Code" Width="80" DisplayMemberBinding="{Binding FlightCode}"/>
+                    <GridViewColumn Header="Status" Width="180" DisplayMemberBinding="{Binding Status}"/>
+                    <GridViewColumn Header="Time" Width="150" DisplayMemberBinding="{Binding Time}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Label Content="Next Flight" Height="28" HorizontalAlignment="Left" Margin="17,345,0,0" Name="label1" VerticalAlignment="Top" />
+        <TextBox Height="23" HorizontalAlignment="Right" Margin="0,348,95,0" Name="txtFlightCode" VerticalAlignment="Top" Width="88" Text=" " />
+        <Button Content="Send Next Airplane to Runaway" Height="23" HorizontalAlignment="Right" Margin="0,348,25,0" Name="btnSend" VerticalAlignment="Top" Width="188" Click="btnSend_Click" Grid.Column="1" />
+    </Grid>
+</Window>
